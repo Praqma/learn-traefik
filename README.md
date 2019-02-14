@@ -2,10 +2,10 @@
 This repository contains examples on using traefik reverse proxy. This repository is used as a teaching aid in the training videos about Traefik, created by Kamran. These videos are available here:
 
 * English:
- * [link to be provided](link to be provided). 
+    * [link to be provided](link to be provided). 
 * Urdu/Hindi: 
- * [Introduction and basic setup (docker-compose)](https://youtu.be/CakHQs-GRJs) 
- * [HTTPS/SSL (docker-compose)](https://youtu.be/hwqsosJJ5S0)
+    * [Introduction and basic setup (docker-compose)](https://youtu.be/CakHQs-GRJs) 
+    * [HTTPS/SSL (docker-compose)](https://youtu.be/hwqsosJJ5S0)
 
 The repo contains various scenarios explained with Docker-Compose. Please check the [examples/](examples/) directory for related files.
 
