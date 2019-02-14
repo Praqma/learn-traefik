@@ -4,7 +4,7 @@ services:
   traefik:
     image: traefik:alpine
     labels:
-      - traefik.frontend.rule=Host:traefik.example.com
+      - traefik.frontend.rule=Host:traefik.example.org
       - traefik.port=8080
       - traefik.enable=true
       - traefik.frontend.auth.basic.users=admin:$$2y$$05$$mLR8hPAoXy0VJjOjqFkM6.0VJP7q1HwoQi5qCCLe3WWvGKXGMv9q6
@@ -19,11 +19,20 @@ services:
   nginx:
     image: nginx:alpine
     labels:
-      - traefik.frontend.rule=Host:nginx.example.com,www.example.com
+      - traefik.frontend.rule=Host:nginx.example.com,www.example.com,example.com
       - traefik.port=80
       - traefik.enable=true
     volumes:
       - ${PWD}/example.com-index.html:/usr/share/nginx/html/index.html
+
+  apache:
+    image: httpd:alpine
+    labels:
+      - traefik.frontend.rule=Host:apache.example.net,www.example.net,example.net
+      - traefik.port=80
+      - traefik.enable=true
+    volumes:
+      - ${PWD}/example.net-index.html:/usr/local/apache2/htdocs/index.html
 
   tomcat:
     image: tomcat:alpine
@@ -33,6 +42,8 @@ services:
       - traefik.enable=true
     volumes:
       - ${PWD}/sample.war:/usr/share/tomcat/webapps/sample.war
+
+
 
   mysqldb:
     image: mysql

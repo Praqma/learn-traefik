@@ -12,7 +12,7 @@ The repo contains various scenarios explained with Docker-Compose. Please check 
 The diagrams used in these examples are available as .xoj and as .pdf in the [docs/](docs/) directory.
 
 # Topics covered in the video:
-* Traefik quick start
+* Traefik quick start (API and Dashboard)
 * Understanding Traefik's behavior for an example docker-compose stack
 * The `exposedByDefault` setting
 * Using labels to setup frontends
