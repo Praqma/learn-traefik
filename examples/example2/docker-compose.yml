@@ -1,0 +1,39 @@
+version: "3"
+services:
+
+  traefik:
+    image: traefik:alpine
+    labels:
+      - traefik.frontend.rule=Host:traefik.example.com
+      - traefik.port=8080
+      - traefik.enable=true
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ${PWD}/traefik.toml:/etc/traefik/traefik.toml
+    ports:
+      - 80:80
+      - 443:443
+      - 8080:8080 
+
+  nginx:
+    image: nginx:alpine
+    labels:
+      - traefik.frontend.rule=Host:nginx.example.com,www.example.com,example.com
+      - traefik.port=80
+      - traefik.enable=true
+    volumes:
+      - ${PWD}/example.com-index.html:/usr/share/nginx/html/index.html
+
+  tomcat:
+    image: tomcat:alpine
+    labels:
+      - traefik.frontend.rule=Host:tomcat.example.com
+      - traefik.port=8080
+      - traefik.enable=true
+    volumes:
+      - ${PWD}/sample.war:/usr/share/tomcat/webapps/sample.war
+
+  mysqldb:
+    image: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD="SuperSecretPassword"

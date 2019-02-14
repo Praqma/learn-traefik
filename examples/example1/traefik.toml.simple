@@ -1,0 +1,27 @@
+defaultEntryPoints = ["http", "https"]
+logLevel = "INFO"
+
+sendAnonymousUsage = true
+
+[docker]
+#  domain = "example.com"
+  endpoint = "unix:///var/run/docker.sock"
+  exposedByDefault = true
+
+# enabling api is not absolutely necessary, it is needed only if you need dashboard.
+[api]
+dashboard = true
+entrypoint = "dashboard"
+
+
+[entryPoints]
+  [entryPoints.http]
+  address = ":80"
+
+  [entryPoints.https]
+  address = ":443"
+
+  [entryPoints.dashboard]
+  address = ":8080"
+    [entryPoints.dashboard.auth.basic]
+    users = ["admin:$2y$08$64hQda74gXS80mS63hN3xOFGVB9KA2vUOXtW.NDaBjX9pEHq7qdUa"]

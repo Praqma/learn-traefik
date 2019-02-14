@@ -1,0 +1,37 @@
+defaultEntryPoints = ["http", "https"]
+logLevel = "INFO"
+
+[docker]
+  endpoint = "unix:///var/run/docker.sock"
+  exposedByDefault = false
+
+
+# enabling api is not absolutely necessary, it is needed only if you need dashboard.
+[api]
+  dashboard = true
+  entrypoint = "dashboard"
+
+
+[entryPoints]
+  [entryPoints.http]
+  address = ":80"
+    [entryPoints.http.redirect]
+    entryPoint = "https"
+
+  [entryPoints.https]
+  address = ":443"
+    [entryPoints.https.tls]
+      [[entryPoints.https.tls.certificates]]
+      certFile = "/certs/tls.crt"
+      keyFile = "/certs/tls.key"
+
+
+  [entryPoints.dashboard]
+  address = ":8080"
+
+    [entryPoints.dashboard.auth.basic]
+    # admin/secret
+    # users = ["admin:$2y$08$64hQda74gXS80mS63hN3xOFGVB9KA2vUOXtW.NDaBjX9pEHq7qdUa"]
+    users = ["kamran:$2y$05$oCAwtNymC1be9.uDq.LbG./1ENktYoGKU.KNo5o7.DL26FJVGCiY2"]
+
+
