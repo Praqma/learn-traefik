@@ -17,9 +17,12 @@ The diagrams used in these examples are available as .xoj and as .pdf in the [do
 * The `exposedByDefault` setting
 * Using labels to setup frontends
 * Dashboard protection with passwords
-* Difference between HTTP and DNS challenge
 * SSL/TLS/HTTPS with self signed certificates
-* SSL/TLS/HTTPS with certificates issued by LetsEncrypt using ACME
+* Introduction to LetsEncrypt, ACME, CertBot, etc
+* Difference between HTTP and DNS challenge
 * Difference between staging and production certificates
 * LetsEncrypt's rate limits to watch for
+* SSL/TLS/HTTPS certificates from LetsEncrypt
+* Example with HTTP challenge
+* Example with DNS challenge
 
