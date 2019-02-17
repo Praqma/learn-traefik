@@ -21,7 +21,6 @@ logLevel = "INFO"
 
     [entryPoints.dashboard.auth.basic]
     # admin/secret
-    # users = ["admin:$2y$08$64hQda74gXS80mS63hN3xOFGVB9KA2vUOXtW.NDaBjX9pEHq7qdUa"]
-    users = ["kamran:$2y$05$oCAwtNymC1be9.uDq.LbG./1ENktYoGKU.KNo5o7.DL26FJVGCiY2"]
+    users = ["admin:$2y$05$e2CN9/A0dntKmtR/sysuSuY34NOWvkYrxKevZxH1zxm4k.SNisigy"]
 
 

@@ -1,15 +1,17 @@
+defaultEntryPoints = ["http", "https"]
 logLevel = "INFO"
 
-# quick-start stuff:
-
-defaultEntryPoints = ["http"]
+sendAnonymousUsage = true
 
 [docker]
   endpoint = "unix:///var/run/docker.sock"
+  exposedByDefault = true
 
+# enabling api is not absolutely necessary, it is needed only if you need dashboard.
 [api]
-  dashboard = true
-  entrypoint = "dashboard"
+dashboard = true
+entrypoint = "dashboard"
+
 
 [entryPoints]
   [entryPoints.http]

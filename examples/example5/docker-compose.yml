@@ -1,0 +1,44 @@
+version: "3"
+services:
+
+  traefik:
+    image: traefik:alpine
+    labels:
+      - traefik.frontend.rule=Host:traefik.lab.praqma.com
+      - traefik.port=8080
+      - traefik.enable=true
+    environment:
+      AWS_ACCESS_KEY_ID: 'YOUR-ACCESS-KEY-HERE'
+      AWS_SECRET_ACCESS_KEY: 'YOUR-SECRET-KEY-HERE'
+      AWS_HOSTED_ZONE_ID: 'HOSTED-DNS-ZONE-ID-HERE'
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ${PWD}/traefik.toml:/etc/traefik/traefik.toml
+      - ${PWD}/acme.json:/acme.json
+      # note: acme.json need to have 0600 permissions.
+    ports:
+      - 80:80
+      - 443:443
+      - 8080:8080 
+  nginx:
+    image: nginx:alpine
+    labels:
+      - traefik.frontend.rule=Host:nginx.lab.praqma.com
+      - traefik.port=80
+      - traefik.enable=true
+    volumes:
+      - ${PWD}/example.com-index.html:/usr/share/nginx/html/index.html
+
+  tomcat:
+    image: tomcat:alpine
+    labels:
+      - traefik.frontend.rule=Host:tomcat.lab.praqma.com
+      - traefik.port=8080
+      - traefik.enable=true
+    volumes:
+      - ${PWD}/sample.war:/usr/share/tomcat/webapps/sample.war
+
+  mysqldb:
+    image: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD="SuperSecretPassword"

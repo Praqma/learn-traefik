@@ -1,5 +1,3 @@
-logLevel = "INFO"
-
 # quick-start stuff:
 
 defaultEntryPoints = ["http"]

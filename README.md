@@ -12,7 +12,7 @@ The repo contains various scenarios explained with Docker-Compose. Please check 
 The diagrams used in these examples are available as .xoj and as .pdf in the [docs/](docs/) directory.
 
 # Topics covered in the video:
-* Traefik quick start (API and Dashboard)
+* Traefik quick start (API and Dashboard) (`/api` , `/health`, etc) [https://docs.traefik.io/configuration/api/](https://docs.traefik.io/configuration/api/)
 * Understanding Traefik's behavior for an example docker-compose stack
 * The `exposedByDefault` setting
 * Using labels to setup frontends
@@ -23,6 +23,8 @@ The diagrams used in these examples are available as .xoj and as .pdf in the [do
 * Difference between staging and production certificates
 * LetsEncrypt's rate limits to watch for
 * SSL/TLS/HTTPS certificates from LetsEncrypt
+* The `acmeLogging` directive
+* The `onHostRule` directive
 * Example with HTTP challenge
 * Example with DNS challenge
 
