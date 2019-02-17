@@ -1,4 +1,6 @@
-defaultEntryPoints = ["http", "https"]
+# defaultEntryPoints = ["http", "https"]
+
+defaultEntryPoints = ["http"]
 logLevel = "INFO"
 
 [docker]
@@ -19,8 +21,8 @@ logLevel = "INFO"
   [entryPoints.dashboard]
   address = ":8080"
 
-    [entryPoints.dashboard.auth.basic]
-    # admin/secret
-    users = ["admin:$2y$05$e2CN9/A0dntKmtR/sysuSuY34NOWvkYrxKevZxH1zxm4k.SNisigy"]
+    # [entryPoints.dashboard.auth.basic]
+    # # admin/secret
+    # users = ["admin:$2y$05$1B3WtLPcXoB.MbtRT36AOOKBlO5VhUlbyc1VyqWb4cm8AeWIDCl7K"]
 
 

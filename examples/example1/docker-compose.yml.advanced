@@ -8,6 +8,7 @@ services:
       - traefik.port=8080
       - traefik.enable=true
       - traefik.frontend.auth.basic.users=admin:$$2y$$05$$mLR8hPAoXy0VJjOjqFkM6.0VJP7q1HwoQi5qCCLe3WWvGKXGMv9q6
+      # admin/secret
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ${PWD}/traefik.toml:/etc/traefik/traefik.toml
@@ -42,8 +43,6 @@ services:
       - traefik.enable=true
     volumes:
       - ${PWD}/sample.war:/usr/share/tomcat/webapps/sample.war
-
-
 
   mysqldb:
     image: mysql

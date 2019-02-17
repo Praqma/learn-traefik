@@ -41,9 +41,10 @@ storage = "/acme.json"
 # Uncomment the 'caServer' line to use Let's Encrypt's staging server,
 #   leave commented to goto/use prod certificates.
 #
-# caServer = "https://acme-staging-v02.api.letsencrypt.org/directory"
+caServer = "https://acme-staging-v02.api.letsencrypt.org/directory"
 
 entryPoint = "https"
+
   [acme.dnsChallenge]
   provider = "route53"
   delayBeforeCheck = 0
