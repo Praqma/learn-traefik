@@ -7,9 +7,9 @@ This repository contains examples on using traefik reverse proxy. This repositor
     * [Introduction and basic setup (docker-compose)](https://youtu.be/CakHQs-GRJs) 
     * [HTTPS/SSL (docker-compose)](https://youtu.be/hwqsosJJ5S0)
 
-The repo contains various scenarios explained with Docker-Compose. Please check the [examples/](examples/) directory for related files.
+The repo contains various scenarios explained with `docker-compose`. Please check the [examples/](examples/) directory for related files.
 
-The diagrams used in these examples are available as .xoj and as .pdf in the [docs/](docs/) directory.
+The diagrams used in these examples are available as `.xoj` and as `.pdf` in the [docs/](docs/) directory.
 
 # Topics covered in the video:
 * Traefik quick start (API and Dashboard) (`/api` , `/health`, etc) [https://docs.traefik.io/configuration/api/](https://docs.traefik.io/configuration/api/)
